@@ -7,7 +7,7 @@ source.new = function()
 end
 
 function source:is_available()
-  if vim.fn['iced#repl#is_connected']() then
+  if vim.fn['iced#repl#is_connected']() and vim.fn['iced#nrepl#check_session_validity']() then
     return true
   else
     return false
